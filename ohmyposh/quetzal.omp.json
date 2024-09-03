@@ -1,0 +1,52 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": false,
+    "version": 2,
+    "console_title_template": "{{ .Shell }}{{if .Root}}(<b>Admin</b>){{ end }} -> {{ .ShellVersion }}",
+    "blocks": [
+        {
+            "type":"prompt",
+            "newline": false,
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "session",
+                    "style": "plain",
+                    "foreground": "#d8dee9",
+                    "template": "{{ if .SSHSession }}<#dc322f>[\ueb3a]</dc322f> {{ end }}\uf007 {{ .UserName }} on "
+                },
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "#5e81ac",
+                    "properties": {
+                        "folder_separator_icon": "\\",
+                        "home_icon": "~",
+                        "style": "agnoster_short",
+                        "max_depth": 2
+                    },
+                    "template": "\uf07b {{ .Path }} "
+                }
+            ]
+        },
+        {
+            "type":"prompt",
+            "newline": true,
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#81a1c1",
+                    "template": "\uf178 "
+                }
+            ]
+        }
+
+    ],
+    "transient_prompt": {
+        "background": "transparent",
+        "foreground": "#ffffff",
+        "template": "{{ .Shell }} \uf178 "
+    }
+}

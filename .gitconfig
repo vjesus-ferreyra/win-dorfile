@@ -1,0 +1,12 @@
+[user]
+        name = Victor Jesus Torres Ferreyra
+        email = vjesus.torres.dev@outlook.com
+[core]
+        editor = vim
+[init]
+        defaultBranch = main
+[alias]
+        a = add
+        co = commit
+        cl = clone
+        ps = push

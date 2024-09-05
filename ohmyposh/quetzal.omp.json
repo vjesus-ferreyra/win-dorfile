@@ -13,7 +13,7 @@
                     "type": "session",
                     "style": "plain",
                     "foreground": "#d8dee9",
-                    "template": "{{ if .SSHSession }}<#dc322f>[\ueb3a]</dc322f> {{ end }}\uf007 {{ .UserName }} on "
+                    "template": "{{ if .SSHSession }}<#dc322f>[\ueb3a]</> {{ end }}\uf007 {{ .UserName }} on "
                 },
                 {
                     "type": "path",
@@ -26,6 +26,21 @@
                         "max_depth": 2
                     },
                     "template": "\uf07b {{ .Path }} "
+                },
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "foreground": "#d08770",
+                    "properties": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "branch_icon": "\ue725 ",
+                        "branch_identical_icon": "\u2261 ",
+                        "commit_icon": "\ue729 ",
+                        "github_icon": "\uea84 ",
+                        "gitlab_icon": "\uf296 "
+                    },
+                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if or .Ahead .Behind }} ({{ if .Ahead }}\uf062{{ .Ahead }}{{ end }}{{ if .Behind }}\uf063{{ .Behind }}{{ end }}){{ end }}"
                 }
             ]
         },

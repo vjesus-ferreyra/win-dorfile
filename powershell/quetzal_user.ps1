@@ -41,6 +41,3 @@ function touch {
 
     New-Item -Path . -Name $name -ItemType file
 }
-
-# Enviroment Paths
-$env:Path += ";C:\Users\quetzal\AppData\Local\Programs\oh-my-posh\bin"
